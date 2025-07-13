@@ -11,7 +11,7 @@
 - ✅ บันทึกข้อมูลผู้ใช้งานใหม่ใน Google Sheet
 - ✅ บันทึก log การเปิดดูเอกสารทุกครั้ง
 - ✅ รองรับการ deploy ผ่าน Netlify
-- ✅ ปรับประเภทเอกสารผ่านพารามิเตอร์ `?buttonName=RFA`
+- ✅ ปรับประเภทเอกสารผ่านพารามิเตอร์ `?docType=RFA`
 
 ---
 
@@ -82,9 +82,9 @@ const LOOKER_URLS = {
 ## 🧪 วิธีทดสอบ
 
 1. เปิดผ่าน LINE App หรือ Web Browser:
-   - `https://document.netlify.app/?buttonName=RFA`
-   - `https://document.netlify.app/?buttonName=RFI`
-   - `https://document.netlify.app/?buttonName=Letter_IN`
+   - `https://document.netlify.app/?docType=RFA`
+   - `https://document.netlify.app/?docType=RFI`
+   - `https://document.netlify.app/?docType=Letter_IN`
 2. ระบบจะให้ Login ผ่าน LINE (ถ้ายังไม่เคย)
 3. ระบบจะโหลด Looker Report ที่กำหนด และบันทึกข้อมูลลง Google Sheet
 
@@ -100,9 +100,9 @@ const LOOKER_URLS = {
 
 ### Sheet: `UserLog`
 
-| Timestamp           | User ID | Display Name | Button Clicked |
-|---------------------|---------|--------------|----------------|
-| 2025-07-10 12:34:56 | Uxxxx   | John Doe     | RFA            |
+| Timestamp           | User ID | Display Name | docType |
+|---------------------|---------|--------------|---------|
+| 2025-07-10 12:34:56 | Uxxxx   | John Doe     | RFA     |
 
 ---
 
@@ -116,5 +116,5 @@ const LOOKER_URLS = {
 
 ## 🧑‍💻 ผู้จัดทำ
 
-- Pairot Huipan (@yourname or LINE bot name)
+- Pairot Huipan 
 - พัฒนาเพื่อใช้งานในระบบเอกสาร JVBP ผ่าน Looker Studio
