@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JVBP Document</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+</head>
+<body>
+
+  <div id="loader"><div class="spinner"></div><p>Loading...</p></div>
+  <div id="iframe-container" style="margin-top: 20px;"></div>
+
+  <script>
+    const buttonName = new URLSearchParams(window.location.search).get('buttonName') || 'RFA';
+    const liffId = '2007032148-mxreYwe5';  // ใช้ LIFF ID เดียวกัน
+
+    const script = document.createElement('script');
+    script.src = 'script.js';
+    script.onload = () => {
+      window.buttonName = buttonName;
+      window.liffId = liffId;
+      initLiff();
+    };
+    document.body.appendChild(script);
+  </script>
+</body>
+</html>
